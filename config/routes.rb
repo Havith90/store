@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+
   namespace :admin do
+    #categories
+    #VERB   URI                         RESPONSABLE       ALIAS
     get 'categories',           to: 'categories#index', as: 'categories'
     get 'categories/new',       to: 'categories#new',   as: 'new_category'
     get 'categories/:id',       to: 'categories#show',  as: 'category'
@@ -9,7 +12,20 @@ Rails.application.routes.draw do
     put     'categories/:id',     to: 'categories#update'
     patch   'categories/:id',     to: 'categories#update'
     delete  'categories/:id',     to: 'categories#destroy'
+  
 
+    #roles
+    get 'roles',            to: 'roles#index', as: 'roles'
+    get 'roles/new',        to: 'roles#new',   as: 'new_role'
+    get 'roles/:id',        to: 'roles#show',  as: 'role'
+    get 'roles/:id/edit',   to: 'roles#edit',  as: 'edit_role'
+
+    post    'roles',         to: 'roles#create'
+    put     'roles/:id',     to: 'roles#update'
+    patch   'roles/:id',     to: 'roles#update'
+    delete  'roles/:id',     to: 'roles#destroy'    
+    
+  end
 
     #get 'products',           to: 'products#index', as: 'products'
     #get 'products/new',       to: 'products#new',   as: 'new_product'
@@ -33,15 +49,7 @@ Rails.application.routes.draw do
     #delete  'statuses/:id',     to: 'statuses#destroy'
 
 
-    #get 'roles',           to: 'roles#index', as: 'roles'
-    #get 'roles/new',       to: 'roles#new',   as: 'new_rol'
-    #get 'roles/:id',       to: 'roles#show',  as: 'rol'
-    #get 'roles/:id/edit',  to: 'roles#edit',  as: 'edit_rol'
 
-    #post    'roles',         to: 'roles#create'
-    #put     'roles/:id',     to: 'roles#update'
-    #patch   'roles/:id',     to: 'roles#update'
-    #delete  'roles/:id',     to: 'roles#destroy'
-  end
+ 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

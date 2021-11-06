@@ -11,6 +11,14 @@
   </head>
 
   <body>
-    <%= yield %> <!-- el yield es el q muestras las vistas de views, sin este, aparece la pag en blanco -->
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <%= render "layouts/vertical_menu" %>
+        </div>
+        <div class="col">
+          <%= yield %> <!-- el yield es el q muestras las vistas de views, sin este, aparece la pag en blanco -->
+        </div>
+      </div>
   </body>
 </html>
