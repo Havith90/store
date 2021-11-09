@@ -13,7 +13,7 @@ class Admin::RolesController < ApplicationController
     end
     #GET /roles/:new
     def new
-      @roles = Role.new
+      @role = Role.new
     end
 #GET /roles/:id/edit
     def edit
@@ -21,9 +21,9 @@ class Admin::RolesController < ApplicationController
 
     #POST /roles
     def create
-      @roles = Role.new(params_role)
+      @role = Role.new(params_role)
       if @role.save
-        redirect_to_admin_roles_path
+        redirect_to admin_roles_path
       else  
         render :new
       end
@@ -32,7 +32,7 @@ class Admin::RolesController < ApplicationController
   #PUT/PATCH /roles/:id
   def update
     if @role.update(params_role)
-      redirect_to_admin_roles_path
+      redirect_to admin_roles_path
     else    
       render :edit
     end
@@ -41,7 +41,7 @@ class Admin::RolesController < ApplicationController
   #DELETE /roles/:id
   def destroy
     @role.destroy
-    redirect_to_admin_roles_path
+    redirect_to admin_roles_path
   end
 
   private
@@ -53,7 +53,7 @@ class Admin::RolesController < ApplicationController
     @role = Role.find(params[:id])
   rescue
     flash[:set_role_error] = 'Could not find the record #{params[:id]}'
-    redirect_to_admin_roles_path
+    redirect_to admin_roles_path
   end
 
 end
