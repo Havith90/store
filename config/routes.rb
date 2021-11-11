@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'pages/home'
-  namespace :admin do
+  # Pages
+  root 'pages#home'
+  get '/cart', to: 'pages#cart', as: 'cart'
 
-  end
+  #get 'pages/home'
+  
   namespace :admin do
     #categories
     #VERB   URI                         RESPONSABLE       ALIAS
@@ -42,23 +44,23 @@ Rails.application.routes.draw do
 
   end
 
-    #get 'products',           to: 'products#index', as: 'products'
-    #get 'products/new',       to: 'products#new',   as: 'new_product'
-    #get 'products/:id',       to: 'products#show',  as: 'product'
-    #get 'products/:id/edit',  to: 'products#edit',  as: 'edit_product'
+    get 'products',           to: 'products#index', as: 'products'
+    get 'products/new',       to: 'products#new',   as: 'new_product'
+    get 'products/:id',       to: 'products#show',  as: 'product'
+    get 'products/:id/edit',  to: 'products#edit',  as: 'edit_product'
 
-    #post    'products',         to: 'products#create'
-    #put     'products/:id',     to: 'products#update'
-    #patch   'products/:id',     to: 'products#update'
-    #delete  'products/:id',     to: 'products#destroy'
+    post    'products',         to: 'products#create'
+    put     'products/:id',     to: 'products#update'
+    patch   'products/:id',     to: 'products#update'
+    delete  'products/:id',     to: 'products#destroy'
 
 
   
 
+  end
 
 
 
-
- 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
