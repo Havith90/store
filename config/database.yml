@@ -22,7 +22,8 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
-
+  database: store   #db/production.sqlite3
+  username: <%= Rails.application.credentials.db_production[:username] %>
+  password: <%= Rails.application.credentials.db_production[:password] %>
 
 
