@@ -2,7 +2,7 @@
 lock "~> 3.16.0"
 
 set :application, "store"
-set :repo_url, "git@github.com:/store.git"
+set :repo_url, "git@github.com:Havith90/store.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
