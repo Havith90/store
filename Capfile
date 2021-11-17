@@ -39,4 +39,4 @@ install_plugin Capistrano::SCM::Git
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
 
 set :rbenv_type, :user
-set :rbenv_ruby, '3.0.2' # ⏰ COLOCAR TU VERSIÓN DE RUBY
+set :rbenv_ruby, '2.7.4' # ⏰ COLOCAR TU VERSIÓN DE RUBY
