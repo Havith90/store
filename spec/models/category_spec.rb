@@ -11,5 +11,12 @@ RSpec.describe Category, type: :model do
       #Assert /Afirmas/ validar
       expect(new_category.errors[:name].count).to_not be(0)
     end
+
+    it 'when attributes are valid' do 
+      new_category = Category.new(name: 'food')
+
+      new_category.save
+
+      expect(new_category.id).to
   end
 end
